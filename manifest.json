@@ -1,11 +1,12 @@
 {
-  "icon.png" : "7e489d9a3ff24853e2cd82fd4b6dadd1b632f405",
-  "logo.png" : "7e489d9a3ff24853e2cd82fd4b6dadd1b632f405",
-  "icon@2x.png" : "836cb893206f5a4356ec4270e4194b26c95cf37c",
-  "background.png" : "da25700a2ea4e97d5445d7ae7d5c587a9c1f8c58",
-  "logo@2x.png" : "836cb893206f5a4356ec4270e4194b26c95cf37c",
-  "pass.json" : "b9d40d1e62e04888f0baedace8b429b9da7f0644",
-  "background@2x.png" : "61bcc432db695590b327f83c2b0f6452900401fc",
+  "icon.png" : "e0f0bcd503f6117bce6a1a3ff8a68e36d26ae47f",
+  "logo.png" : "abc97e3b2bc3b0e412ca4a853ba5fd90fe063551",
+  "icon@2x.png" : "784a9bb170809c607ecc73a6ab183a1e65bf82a0",
+  "background.png" : "dabfbcc61890ef2aa02943c49859a4ba8465a00e",
+  "logo@2x.png" : "5d1ea85567258fbae37caca20b3232e8069d8dcf",
+  "pass.json" : "b4f7e332e50504ee49cd2e2f19ac891ea95abbb0",
+  "background@2x.png" : "0d5f7f8fec8cf1e45e5bda4542023d394dcc4e6f",
+  ".DS_Store" : "df2fbeb1400acda0909a32c1cf6bf492f1121e07",
   "thumbnail.png" : "dabfbcc61890ef2aa02943c49859a4ba8465a00e",
   "thumbnail@2x.png" : "0d5f7f8fec8cf1e45e5bda4542023d394dcc4e6f"
 }
