@@ -1,8 +1,6 @@
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Key;
@@ -81,7 +79,8 @@ public class PassSigner {
 		}
 	}
 	
-	public byte[] signManifest(InputStream manifestInputStream) throws OperatorCreationException, CertificateEncodingException, IOException, CMSException{
+	public byte[] signManifest(byte[] manifestBytes)
+			throws OperatorCreationException, CertificateEncodingException, IOException, CMSException{
 		CMSSignedDataGenerator generator = new CMSSignedDataGenerator();
         ContentSigner sha1Signer = new JcaContentSignerBuilder("SHA1withRSA").setProvider(BouncyCastleProvider.PROVIDER_NAME).build(this.privateKey);
 
@@ -96,7 +95,15 @@ public class PassSigner {
 
         generator.addCertificates(certs);
         
-        // read manifest
+        CMSSignedData sigData = generator.generate(new CMSProcessableByteArray(manifestBytes), false);
+        byte[] signedDataBytes = sigData.getEncoded();
+        
+        return signedDataBytes;
+	}
+	
+	public byte[] signManifest(InputStream manifestInputStream) 
+			throws OperatorCreationException, CertificateEncodingException, IOException, CMSException{
+		
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         InputStream is = manifestInputStream;
         int read = 0;
@@ -108,26 +115,12 @@ public class PassSigner {
         is.close();
         buffer = bos.toByteArray();
         
-        CMSSignedData sigData = generator.generate(new CMSProcessableByteArray(buffer), false);
-        byte[] signedDataBytes = sigData.getEncoded();
-        
-        return signedDataBytes;
+        return signManifest(buffer);
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		try {
-			PassSigner ps = new PassSigner(System.getProperty("user.dir") + File.separator + "Certificate.p12", 
-					"Gwmobile116", System.getProperty("user.dir") + File.separator + "/WWDR.cer");
-			byte[] signData = ps.signManifest(new FileInputStream(System.getProperty("user.dir") + File.separator + "manifest.json"));
-			
-			FileOutputStream fos = new FileOutputStream(System.getProperty("user.dir") + File.separator + "/signature");
-			fos.write(signData);
-			fos.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public byte[] signManifest(String manifest)
+			throws OperatorCreationException, CertificateEncodingException, IOException, CMSException{
+		return signManifest(manifest.getBytes());
 	}
 	
 }
