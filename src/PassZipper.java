@@ -63,6 +63,7 @@ public class PassZipper {
 				passZip.addFile(fileName, PassZipper.readFile(filePath));
 			}
 			String manifestString = PassManifestUtils.generateManifest(fileSHA1Map);
+			
 			passZip.addFile("manifest.json", manifestString.getBytes());
 			PassSigner passSigner = new PassSigner(System.getProperty("user.dir") + File.separator + "Certificate.p12", 
 					"Gwmobile116", System.getProperty("user.dir") + File.separator + "WWDR.cer");
