@@ -11,7 +11,7 @@ public class Test {
 			PassZipper passZip = new DefaultPassZipper();
 			
 			Map<String, String> fileSHA1Map = new HashMap<String, String>();
-			String passFolderPath = System.getProperty("user.dir") + File.separator + "test.raw";
+			String passFolderPath = System.getProperty("user.dir") + File.separator + "TicketTemplate.raw";
 			String[] subfiles = new File(passFolderPath).list();
 			for(int i = 0; i < subfiles.length; ++i){
 				String fileName = subfiles[i];

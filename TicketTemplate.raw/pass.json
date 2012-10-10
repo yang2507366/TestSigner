@@ -1,0 +1,75 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.gewara.testpassbook",
+  "serialNumber" : "$serialNumber",
+  "teamIdentifier" : "UWJVY6ERGE",
+  "webServiceURL" : "$webServiceURL",
+  "authenticationToken" : "$authenticationToken",
+  "relevantDate" : "2011-12-08T13:00:00-08:00",
+  "logoText" : "格瓦拉@电影",
+  "barcode" : {
+    "message" : "$barcodeMessage",
+    "format" : "PKBarcodeFormatQR",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "Shanghai Gewara Business Info Consulting Co.,ltd",
+  "description" : "取票",
+  "foregroundColor" : "rgb(255, 0, 0)",
+  "backgroundColor" : "rgb(255, 0, 0)",
+  "labelColor" : "rgb(255, 0, 0)", 
+  "eventTicket" : {
+    "primaryFields" : [
+      {
+        "key" : "movieName",
+        "label" : "影片",
+        "value" : "$movieName"
+      }
+    ],
+	"secondaryFields" : [
+      {
+        "key" : "cinemaName",
+        "label" : "影院",
+        "value" : "$cinemaName"
+      }
+    ],
+	"auxiliaryFields" : [
+		{
+			"key" : "movieSession",
+			"label" : "场次",
+			"value" : "$openDate"
+		},
+		{
+			"key" : "seatList",
+			"label" : "座位",
+			"value" : "$seatList",
+		},
+		{
+			"key" : "ticketAmount",
+			"label" : "数量", 
+			"value" : "$seatAmount"
+		}
+	],
+    "backFields" : [
+      {
+        "key" : "cinemaAddress",
+        "label" : "影院地址",
+        "value" : "$cinemaAddress"
+      },
+	{
+        "key" : "getTicketSms",
+        "label" : "取票短信",
+        "value" : "$getTicketSms"
+      },
+	{
+        "key" : "getTicketBrief",
+        "label" : "取票说明",
+        "value" : "请前往影院现场的格瓦拉或联合院线自动取票机，输入取票密码和手机号末四位打印影票入场。"
+      },
+	{
+        "key" : "servicePhoneNumber",
+        "label" : "客服电话",
+        "value" : "4000-406-506"
+      }
+    ]
+  }
+}
