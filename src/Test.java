@@ -24,8 +24,8 @@ public class Test {
 			String manifestString = PassManifestUtils.generateManifest(fileSHA1Map);
 			
 			passZip.addFile("manifest.json", manifestString.getBytes());
-			PassSigner passSigner = new DefaultPassSigner(System.getProperty("user.dir") + File.separator + "Certificate.p12", 
-					"Gwmobile116", System.getProperty("user.dir") + File.separator + "WWDR.cer");
+			PassSigner passSigner = new DefaultPassSigner(System.getProperty("user.dir") + File.separator + "cer_pass.p12", 
+					"Gwmobile116", System.getProperty("user.dir") + File.separator + "cer_wwdr.cer");
 			byte[] signatureBytes = passSigner.signManifest(manifestString.getBytes());
 			passZip.addFile("signature", signatureBytes);
 			

@@ -7,16 +7,16 @@
   "authenticationToken" : "$authenticationToken",
   "relevantDate" : "2011-12-08T13:00:00-08:00",
   "logoText" : "格瓦拉@电影",
+  "description" : "取票",
+  "foregroundColor" : "rgb(255, 0, 0)",
+  "backgroundColor" : "rgb(255, 0, 0)",
+  "labelColor" : "rgb(255, 0, 0)", 
   "barcode" : {
     "message" : "$barcodeMessage",
     "format" : "PKBarcodeFormatQR",
     "messageEncoding" : "iso-8859-1"
   },
   "organizationName" : "Shanghai Gewara Business Info Consulting Co.,ltd",
-  "description" : "取票",
-  "foregroundColor" : "rgb(255, 0, 0)",
-  "backgroundColor" : "rgb(255, 0, 0)",
-  "labelColor" : "rgb(255, 0, 0)", 
   "eventTicket" : {
     "primaryFields" : [
       {
